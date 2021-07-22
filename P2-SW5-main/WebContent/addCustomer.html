@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Cliente</title>
+    </head>
+
+    <body>
+        <h1>Adicionar Cliente</h1>
+        <form action="SaveCustomer" method="post">
+            <table>
+                <tr>
+                    <td>Nome do Cliente:</td>
+                    <td>
+                        <input type="text" name="custName" autocomplete="off" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cidade:</td>
+                    <td>
+                        <input type="text" name="city" autocomplete="off" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Avaliação:</td>
+                    <td>
+                        <input type="number" name="grade" autocomplete="off" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Código do Vendedor:</td>
+                    <td>
+                        <input
+                            type="number"
+                            name="salesmanId"
+                            autocomplete="off"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="save-button">
+                        <input type="submit" value="Save Customer" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br />
+        <a href="index.html">Vendas</a>
+    </body>
+</html>

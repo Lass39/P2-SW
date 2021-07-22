@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Pedido</title>
+    </head>
+
+    <body>
+        <h1>Adicionar novo Pedido</h1>
+        <form action="SaveOrder" method="post">
+            <table>
+                <tr>
+                    <td>Valor da compra:</td>
+                    <td>
+                        <input
+                            type="number"
+                            name="purchAmt"
+                            autocomplete="off"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Data:</td>
+                    <td>
+                        <input type="text" name="ordDate" autocomplete="off" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>C�digo do Cliente:</td>
+                    <td>
+                        <input
+                            type="number"
+                            name="customerId"
+                            autocomplete="off"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>C�digo do Vendedor:</td>
+                    <td>
+                        <input
+                            type="number"
+                            name="salesmanId"
+                            autocomplete="off"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="save-button">
+                        <input type="submit" value="Save Order" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br />
+        <a href="index.html">Vendas</a>
+    </body>
+</html>
