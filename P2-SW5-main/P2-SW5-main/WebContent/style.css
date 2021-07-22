@@ -1,0 +1,114 @@
+@charset "ISO-8859-1";
+
+body {
+	margin: 0;
+	padding: 0;
+	background: gray;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+	font-size: 60px;
+	font-style: italic;
+	margin-top: 15%;
+	font-weight: 500;
+}
+
+.content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    flex-direction: column;
+    margin: 16px 0;
+}
+
+.blue-button {
+	text-decoration: none;
+	font-size: 16px;
+	color: white;
+	border: 1px solid #1A91DA;
+	border-radius: 50px;
+	background: #1A91DA;
+	padding: 8px 20px;
+}
+
+.save-button {
+	text-align: center;
+}
+
+.save-button input {
+	margin-top: 16px;
+}
+
+.lista {
+	list-style-type: square;
+	padding: 0;
+}
+
+.lista li {
+	padding-bottom: 8px;
+}
+
+.content-list {
+	color: white;
+	text-decoration: none;
+	padding-bottom: 8px;
+}
+
+.content-menu {
+	display: flex;
+	width: 60vw;
+	justify-content: space-around;
+}
+
+.menu-options {
+	display: flex;
+	flex-direction: column;
+	width: 6vw;
+}
+
+.menu-options .options {
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu-options .title {
+	text-align: center;
+	font-size: 44px;
+	margin-bottom: 16px;
+}
+
+.menu-options .options img{
+	max-width: 32px;
+	cursor: pointer;
+}
+
+.credits {
+	font-weight: 500;
+	font-size: 32px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.sla {
+	font-weight: 300;
+	font-size: 28px;
+	text-decoration: none;
+	color: #FFFFFF;
+	margin-top: auto;
+	margin-right: 15px;
+}
