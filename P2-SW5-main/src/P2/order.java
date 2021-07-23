@@ -1,12 +1,14 @@
 package P2;
 
+import java.util.Date;
+
 //@author 
 //Giovanni Fernandes CB1640488
 
 public class order {
 
 	private int ordNo, customerId, salesmanId;
-	private String ordDate;
+	private Date ordDate;
 	private float purchAmt;
 	
 	public int getOrdNo() {
@@ -33,11 +35,11 @@ public class order {
 		this.salesmanId = salesmanId;
 	}
 	
-	public String getOrdDate() {
+	public Date getOrdDate() {
 		return ordDate;
 	}
 	
-	public void setOrdDate(String ordDate) {
+	public void setOrdDate(Date ordDate) {
 		this.ordDate = ordDate;
 	}
 	

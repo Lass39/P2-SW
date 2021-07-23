@@ -5,6 +5,7 @@ package P2;
 
 import java.util.*;
 import java.sql.*;
+import java.sql.Date;
 
 public class generalDB {
 	
@@ -14,14 +15,19 @@ public class generalDB {
 
 			String dbDriver = "com.mysql.cj.jdbc.Driver";
 			String dbURL = "jdbc:mysql://localhost:3306/";
-			String dbName = "p2";
+			String dbName = "p2?useTimezone=true&serverTimezone=UTC";
 			String dbUsername = "root";
-			String dbPassword = "";
+			String dbPassword = "adm123";
 			Class.forName(dbDriver);
 
 			connection = DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword);
 		} catch (Exception e) {
+			System.out.println("-------------------------");
+			System.out.println("-------------------------");
 			System.out.println(e);
+			System.out.println("-------------------------");
+			System.out.println("-------------------------");
+
 		}
 		return connection;
 	}
@@ -258,7 +264,7 @@ public class generalDB {
 
 					"insert into orders(purch_amt,ord_date,customer_id,salesman_id) values (?,?,?,?)");
 			ps.setDouble(1, vendedor.getPurchAmt());
-			ps.setString(2, vendedor.getOrdDate());
+			ps.setDate(2, (Date) vendedor.getOrdDate());
 			ps.setInt(3, vendedor.getCustomerId());
 			ps.setInt(4, vendedor.getSalesmanId());
 
@@ -281,7 +287,7 @@ public class generalDB {
 	        PreparedStatement ps = connection.prepareStatement(
 	        "update orders set purch_amt=?,ord_date=?,customer_id=?,salesman_id=? where ord_no=?");
 	        ps.setDouble(1, vendedor.getPurchAmt());
-	        ps.setString(2, vendedor.getOrdDate());
+	        ps.setDate(2, (Date) vendedor.getOrdDate());
 		    ps.setInt(3, vendedor.getCustomerId());
 		    ps.setInt(4, vendedor.getSalesmanId());
             ps.setInt(5, vendedor.getOrdNo());
@@ -325,7 +331,7 @@ public class generalDB {
             {
                 vendedor.setOrdNo(rs.getInt(1));
                 vendedor.setPurchAmt(rs.getFloat(2));
-                vendedor.setOrdDate(rs.getString(3));
+                vendedor.setOrdDate(rs.getDate(3));
                 vendedor.setCustomerId(rs.getInt(4));
                 vendedor.setSalesmanId(rs.getInt(5));
             }
@@ -350,7 +356,7 @@ public class generalDB {
                 order vendedor = new order();
                 vendedor.setOrdNo(rs.getInt(1));
                 vendedor.setPurchAmt(rs.getFloat(2));
-                vendedor.setOrdDate(rs.getString(3));
+                vendedor.setOrdDate(rs.getDate(3));
                 vendedor.setCustomerId(rs.getInt(4));
                 vendedor.setSalesmanId(rs.getInt(5));
                 list.add(vendedor);

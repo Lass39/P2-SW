@@ -5,6 +5,11 @@ package P2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,10 +23,20 @@ public class SaveOrder extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
+		Date formattedDate = null;
 		String sPurchAmt=request.getParameter("purchAmt");
 		float purchAmt=Float.parseFloat(sPurchAmt);
-		String ordDate=request.getParameter("ordDate");
+		String ordDateS=request.getParameter("ordDate");
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		
+        try {
+		 formattedDate = new java.sql.Date(formatter.parse(ordDateS).getTime());
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}  
+       
+
         String sCustomeId=request.getParameter("customerId");
         int customerId=Integer.parseInt(sCustomeId);
         String sSalesmanId=request.getParameter("salesmanId");
@@ -29,7 +44,7 @@ public class SaveOrder extends HttpServlet {
 
         order vendedor=new order();
         vendedor.setPurchAmt(purchAmt);
-        vendedor.setOrdDate(ordDate);
+        vendedor.setOrdDate(formattedDate);
         vendedor.setCustomerId(customerId);
         vendedor.setSalesmanId(salesmanId);
 
