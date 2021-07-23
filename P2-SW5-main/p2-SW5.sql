@@ -1,7 +1,7 @@
 
 
 CREATE TABLE salesman (
-	salesman_id int(5),
+	salesman_id int(5)  AUTO_INCREMENT,
     Name varchar(30),
     City varchar(15),
     Commission decimal(5,2),
@@ -11,7 +11,7 @@ CREATE TABLE salesman (
 
 
 CREATE TABLE customer (
-	customer_id int(5),
+	customer_id int(5)  AUTO_INCREMENT,
     cust_name varchar(30),
     city varchar(15),
     grade int(5),
@@ -23,7 +23,7 @@ CREATE TABLE customer (
 
 CREATE TABLE orders (
 	ORD_NO int(5),
-    PURCH_AMT decimal(8,2),
+    PURCH_AMT decimal(8,2)  AUTO_INCREMENT,
     ORD_date date,
     customer_id int(5),
     salesman_id int(5),
