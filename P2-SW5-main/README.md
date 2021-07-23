@@ -3,5 +3,4 @@
 ### **autores**
 ###### Giovanni Fernandes CB1640488
 
-SQL DO BANCO NA PASTA ANTES DA RAIZ
 
